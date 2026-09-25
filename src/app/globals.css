@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #111616;
+  --ink-soft: #1a2220;
+  --paper: #f1eee5;
+  --paper-dim: #aeb8ae;
+  --line: #33403b;
+
+  --accent-video: #3a55ff;
+  --accent-design: #ff5a5f;
+  --accent-fashion: #d8a13b;
+  --accent-dev: #4f9d8d;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-japanese: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-line: var(--line);
+  --color-video: var(--accent-video);
+  --color-design: var(--accent-design);
+  --color-fashion: var(--accent-fashion);
+  --color-dev: var(--accent-dev);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--accent-fashion);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  color: var(--paper-dim);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.jp-label {
+  color: var(--paper);
+  font-family: var(--font-japanese);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+.film-mark {
+  color: color-mix(in srgb, var(--paper) 7%, transparent);
+  font-family: var(--font-display);
+  font-size: clamp(11rem, 28vw, 23rem);
+  font-style: italic;
+  line-height: 0.7;
+  position: absolute;
+  right: -0.12em;
+  top: 0.12em;
+  user-select: none;
+}
+
+.film-poster {
+  display: block;
+  height: auto;
+  margin-top: 2rem;
+  object-fit: cover;
+  opacity: 0.78;
+  width: min(100%, 18rem);
+}
+
+@media (min-width: 1024px) {
+  .film-poster {
+    height: 100%;
+    margin-top: 0;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.film-glow {
+  background: radial-gradient(circle, rgba(216, 161, 59, 0.12), transparent 68%);
+  height: 34rem;
+  pointer-events: none;
+  position: absolute;
+  right: 8%;
+  top: 8%;
+  width: 34rem;
+}
+
+.work-card {
+  min-height: 16rem;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.work-card:hover {
+  border-color: var(--paper-dim);
+  transform: translateY(-4px);
+}

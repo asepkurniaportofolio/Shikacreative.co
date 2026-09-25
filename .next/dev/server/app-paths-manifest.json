@@ -1,0 +1,8 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/booking/page": "app/booking/page.js",
+  "/layanan/page": "app/layanan/page.js",
+  "/page": "app/page.js",
+  "/pemeran/shiori-kagawa/page": "app/pemeran/shiori-kagawa/page.js",
+  "/portofolio/page": "app/portofolio/page.js"
+}
